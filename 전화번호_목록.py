@@ -1,3 +1,4 @@
+#실패 케이스(시간 초과)
 def solution(phone_book):
     answer = True #초깃값 True로 설정
     #반복문 통해 하나씩 확인
@@ -13,3 +14,12 @@ def solution(phone_book):
         if answer == False:
             break
     return answer
+
+#정답
+def solution(phone_book):
+    phone_book.sort()
+    for i in range(len(phone_book)-1):
+        #정렬했으므로 앞뒤만 비교하면 된다.
+        if phone_book[i] == phone_book[i+1][:len(phone_book[i])]:
+            return False
+    return True
